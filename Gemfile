@@ -9,6 +9,8 @@ gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rack-cors'
+gem 'fog-aws'
+gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
