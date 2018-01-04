@@ -7,8 +7,8 @@ end
 
 gem 'ckeditor'
 gem 'paperclip'
+gem 'aws-sdk'
 gem 'rack-cors'
-gem 'fog-aws'
 gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
