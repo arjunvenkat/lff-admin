@@ -40,6 +40,12 @@ class MessagesController < ApplicationController
   def create_from_lff_site
     puts params
     @message = Message.new
+    @message.first_name = params[:first_name]
+    @message.last_name = params[:last_name]
+    @message.org_name = params[:org_name]
+    @message.email = params[:email_address]
+    @message.phone = params[:phone_number]
+    @message.message = params[:message]
     if @message.save
       format.html { redirect_to @message, notice: 'Message was successfully created.' }
       format.json { render :show, status: :created, location: @message }
