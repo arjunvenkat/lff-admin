@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery :except => [:create_from_lff_site]
 
   # GET /messages
   # GET /messages.json
