@@ -8,7 +8,7 @@ end
 gem 'ckeditor'
 gem 'paperclip'
 gem 'aws-sdk'
-gem 'rack-cors'
+gem 'rack-cors', :require => 'rack/cors'
 gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
