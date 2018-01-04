@@ -6,8 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 gem 'ckeditor'
-gem 'carrierwave'
-gem 'mini_magick'
 gem 'paperclip'
 gem 'rack-cors'
 gem 'fog-aws'
