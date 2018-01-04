@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :messages
-  get '/new_message' => 'messages#create_from_lff_site', :defaults => { :format => :json }
+  post '/new_message' => 'messages#create_from_lff_site', :defaults => { :format => :json }
   mount Ckeditor::Engine => '/ckeditor'
   root to: 'posts#index'
   resources :posts
