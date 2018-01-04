@@ -48,9 +48,9 @@ class MessagesController < ApplicationController
     @message.phone = params[:phone_number]
     @message.message = params[:message]
     if @message.save
-      format.json { render :show, status: :created, location: @message }
+      render 'message_success'
     else
-      format.json { render json: @message.errors, status: :unprocessable_entity }
+      render 'message_fail'
     end
   end
 
