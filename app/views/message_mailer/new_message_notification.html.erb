@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>You've received a new message at the Lefkofsky Foundation website. Details below:</h1>
+    <p>
+      First name: <%= @message.first_name %>
+    </p>
+    <p>
+      Last name: <%= @message.last_name %>
+    </p>
+    <p>
+      Organization: <%= @message.org_name %>
+    </p>
+    <p>
+      Email: <%= @message.email %>
+    </p>
+    <p>
+      Phone: <%= @message.phone %>
+    </p>
+    <p>
+      Message: <%= @message.message %>
+    </p>
+    <p>
+      Login to the site at <a href="http://lff-admin.herokuapp.com">http://lff-admin.herokuapp.com</a> to see all your messages.
+    </p>
+    <p>Thanks and have a great day!</p>
+  </body>
+</html>

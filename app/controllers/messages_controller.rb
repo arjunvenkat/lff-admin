@@ -29,6 +29,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
+        MessageMailer.new_message_notification(@message).deliver_now
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @message }
       else
