@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
+  root to: 'posts#index'
   resources :posts
   get '/api/posts' => 'api_posts#index', :defaults => { :format => :json }
   get '/api/posts/:id' => 'api_posts#show', :defaults => { :format => :json }

@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+
+footer {
+  margin-top: 3em;
+  height: 6em;
+  background-color: #EEE;
+}
+
+table {
+  min-height: 32em;
+}
