@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :messages
+  resources :messages, except: [:new, :edit, :update]
   post '/new_message' => 'messages#create_from_lff_site', :defaults => { :format => :json }
   mount Ckeditor::Engine => '/ckeditor'
   root to: 'posts#index'
