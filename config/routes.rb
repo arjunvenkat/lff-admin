@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :messages
   post '/new_message' => 'messages#create_from_lff_site', :defaults => { :format => :json }
   mount Ckeditor::Engine => '/ckeditor'
