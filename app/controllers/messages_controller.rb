@@ -48,10 +48,8 @@ class MessagesController < ApplicationController
     @message.phone = params[:phone_number]
     @message.message = params[:message]
     if @message.save
-      format.html { redirect_to @message, notice: 'Message was successfully created.' }
       format.json { render :show, status: :created, location: @message }
     else
-      format.html { render :new }
       format.json { render json: @message.errors, status: :unprocessable_entity }
     end
   end
