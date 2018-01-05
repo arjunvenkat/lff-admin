@@ -30,7 +30,6 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        MessageMailer.new_message_notification(@message).deliver_now
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @message }
       else
@@ -50,6 +49,7 @@ class MessagesController < ApplicationController
     @message.phone = params[:phone_number]
     @message.message = params[:message]
     if @message.save
+      MessageMailer.new_message_notification(@message).deliver_now
       render 'message_success'
     else
       render 'message_fail'
