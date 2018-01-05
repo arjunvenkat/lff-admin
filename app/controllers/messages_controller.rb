@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, :only => :create_from_lff_site,
+  skip_before_action :authenticate_user!, :only => :create_from_lff_site
   protect_from_forgery :except => [:create_from_lff_site]
 
   # GET /messages
