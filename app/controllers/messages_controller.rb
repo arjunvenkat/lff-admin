@@ -51,10 +51,10 @@ class MessagesController < ApplicationController
     if @message.save
       MessageMailer.new_message_notification(@message).deliver_now
       # msg = {:status => 'success'}
-      url = request.env["HTTP_REFERER"] + "/?success=true"
-      redirect_to url 
+      url = request.env["HTTP_REFERER"] + "?success=true"
+      redirect_to url
     else
-      url = request.env["HTTP_REFERER"] + "/?success=false"
+      url = request.env["HTTP_REFERER"] + "?success=false"
       redirect_to url
     end
   end
