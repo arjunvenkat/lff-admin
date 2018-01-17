@@ -50,9 +50,11 @@ class MessagesController < ApplicationController
     @message.message = params[:message]
     if @message.save
       MessageMailer.new_message_notification(@message).deliver_now
-      render 'message_success'
+      msg = {:status => 'success'}
+      render :json => msg
     else
-      render 'message_fail'
+      msg = {:status => 'fail'}
+      render :json => msg
     end
   end
 
