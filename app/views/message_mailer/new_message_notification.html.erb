@@ -21,6 +21,9 @@
       Phone: <%= @message.phone %>
     </p>
     <p>
+      Received at: <%= @message.created_at.strftime("%l:%M%p on %b %e, %Y") %>
+    </p>
+    <p>
       Message: <%= @message.message %>
     </p>
     <p>

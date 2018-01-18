@@ -26,6 +26,11 @@
 </p>
 
 <p>
+  <strong>Received at:</strong>
+  <%= @message.created_at.strftime("%l:%M%p on %b %e, %Y") %>
+</p>
+
+<p>
   <strong>Message:</strong>
   <%= @message.message %>
 </p>
