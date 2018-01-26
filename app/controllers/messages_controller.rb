@@ -48,15 +48,22 @@ class MessagesController < ApplicationController
     @message.email = params[:email_address]
     @message.phone = params[:phone_number]
     @message.message = params[:message]
-    if @message.save
-      MessageMailer.new_message_notification(@message).deliver_now
-      # msg = {:status => 'success'}
-      url = request.env["HTTP_REFERER"] + "?success=true"
-      redirect_to url
-    else
+
+    if params[:extra_info].present?
       url = request.env["HTTP_REFERER"] + "?success=false"
       redirect_to url
+    else
+      if @message.save
+        MessageMailer.new_message_notification(@message).deliver_now
+        # msg = {:status => 'success'}
+        url = request.env["HTTP_REFERER"] + "?success=true"
+        redirect_to url
+      else
+        url = request.env["HTTP_REFERER"] + "?success=false"
+        redirect_to url
+      end
     end
+
   end
 
 
